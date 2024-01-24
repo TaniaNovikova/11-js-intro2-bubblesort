@@ -41,7 +41,7 @@ function sort(arr, comparator) {
     do {
         b = false;
         for (let i = 0; i < arr.length; i++) {
-            if (comparator(arr[i], arr[i + 1]) === 1) {
+            if (comparator(arr[i], arr[i + 1]) >0) {
                 let t = arr[i];
                 arr[i] = arr[i + 1];
                 arr[i + 1] = t;
@@ -84,7 +84,7 @@ function binarySearch(arr, value) {
 function mid(a, b) {
     let rest = (a + b) % 2;
     if (rest) {
-        middleI = (b + a + 1) / 2;
+        middleI = (b + a - 1) / 2;
     }
     else {
         middleI = (b + a) / 2;
